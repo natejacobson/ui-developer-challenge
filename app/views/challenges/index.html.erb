@@ -1,0 +1,32 @@
+<form>
+	<fieldset>
+		<legend>Floating Placeholders</legend>
+		<dl>
+			<dt>
+				<label for="first_name">First Name</label>
+			</dt>
+			<dd>
+				<input id="first_name" type="text">
+			</dd>
+			<dt>
+				<label for="last_name">Last Name</label>
+			</dt>
+			<dd>
+				<input id="last_name" type="text">
+			</dd>
+			<small class="note">This effect, from MaterializeCSS, is a nice solution to the fact that the user may forget what they're entering once placeholder text disappears. I mixed it up a bit by moving the label below instead of above. It's a real shame that an animation of this sort can't leverage the placeholder attribute from the input field itself. I started to travel down that road before being reminded that the ::before and ::after pseudo classes cannot be applied to input elements. I had thought that by using <code>content: attr(placeholder)</code> I could employ the placeholder. In the end, I resorted to a more traditional approach using absolute positioning on each field's label.</small>
+		</dl>
+	</fieldset>
+	<fieldset class="leftward">
+		<legend>Another Approach</legend>
+		<dl>
+			<dt>
+				<label for="email">Email</label>
+			</dt>
+			<dd>
+				<input id="email" type="text" placeholder="Email">
+			</dd>
+			<small class="note">This is another approach that works to preserve the usability of a label while bringing it inline with the design.</small>
+		</dl>
+	</fieldset>
+</form>
