@@ -1,3 +1,188 @@
 // Place all the styles related to the challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$blue: #2688e3;
+$green: #64c28f;
+
+body {
+	
+	background-color: $blue;
+	font-size: 16px;
+	font-family: Helvetica, sans-serif;
+	
+}
+
+form {
+	
+	fieldset {
+		width: 400px;
+		border: 0;
+		min-width: 0;
+		padding: 1rem;
+		background-color: white;
+		margin: 0 auto;
+		display: table-cell;
+	}
+	
+	legend {
+		display: block;
+		margin: 0;
+		clear: both;
+		padding: .5rem 0 .2rem 0;
+		float: left;
+		overflow: hidden;
+		width: 100%;
+		border-bottom: 3px $blue solid;
+	}
+	
+	label {
+		height: 60px;
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+	}
+	
+	dl {
+		clear: both;
+	}
+	
+	dt,
+	dd {
+		padding: 0;
+		margin: 0;
+		height: 30px;
+		position: relative;
+	}
+	
+	dt label {
+		top: 30px;
+		height: 30px;
+		position: absolute;
+		z-index: 100;
+		display: block;
+		color: gray;
+		font-size: 1rem;
+		line-height: 30px;
+		transition: top .5s ease-out;
+		box-sizing: border-box;
+	}
+	
+	dt.focused label,
+	dt.edited label {
+		top: 55px;
+		right: 0;
+		font-size: .7rem;
+		text-transform: uppercase;
+		opacity: 1;
+		transition: opacity .5s ease-out;
+		transition: top .2s ease-out;
+	}
+		
+	dt.focused label {
+		color: #64c28f;
+	}
+	
+	dt.edited:not(.focused) label {
+		opacity: .4;
+	}
+		
+	input[type="text"] {
+		font-size: 1rem;
+		line-height: 30px;
+		width: 100%;
+		box-sizing: border-box;
+		outline: none;
+		height: 30px;
+		border-style: solid;
+		border-width: 0 0 3px 0;
+		border-color: gray;
+	}
+	
+	input[type="text"]:focus {
+		border-color: #64c28f;
+	}
+	
+	/* Alternate Placehold Displacement */
+	
+	.leftward dl {
+		position: relative;
+	}
+	
+	.leftward legend {
+		margin-bottom: 1rem;
+	}
+	
+	.leftward dt {
+		right: 100%;
+		display: block;
+		width: auto;
+		overflow: hidden;
+		top: 0px;
+		position: absolute;
+		max-width: 0px;
+		transition: max-width 1s ease-out;
+	}
+	
+	.leftward dt.focused,
+	.leftward dt.edited {
+		max-width: 200px;
+		transition: max-width 1s ease-in;
+	}
+	
+	.leftward dt label,
+	.leftward dd input[type="text"] {
+		top: 0;
+		color: white;
+		background: gray;
+		padding: 0 10px 0 10px;
+	}
+	
+	.focused ::-webkit-input-placeholder {
+	   color: transparent;
+	}
+	.focused :-moz-placeholder {
+	   color: transparent;
+	}
+	.focused ::-moz-placeholder {
+	   color: transparent;
+	}
+	.focused :-ms-input-placeholder {  
+	   color: transparent;
+	}
+	
+	.leftward dt label {
+		text-align: right;
+		color: white;
+		font-size: 1rem;
+		text-transform: none;
+		background: $blue;
+		position: relative;
+	}
+	
+	.leftward input[type="text"] {
+		border-width: 0;
+	}
+	
+	.leftward input[type="text"]:focus,
+	.leftward dd.edited input[type="text"] {
+		background: $green;
+		padding-left: 10px;
+		color: white;
+	}
+	
+	.leftward dd.edited input[type="text"]:not(:focus) {
+		background: gray;	
+	}
+	
+	.leftward dt.edited label {
+		opacity: 1;
+	}
+	
+}
+
+.note {
+		margin-top: 2rem;
+		display: block;
+		color: gray;
+	}
